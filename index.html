@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A5 | Nieto Salim Maula</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,54 +21,79 @@
                 }
             }
         }
+        function toggleMenu() {
+            var ul = document.querySelector('#navbar ul');
+            ul.classList.toggle('active');
+        }
+
     </script>
 </head>
 
-<body>
+<body class="w-full">
+    <header>
+        <nav>
+            <div class="logo">
+                <h4>Nieto Salim Maula</h4>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Subjects</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Assignment</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>   
+            </div>
+        </nav>
+    </header>
     <!-- Header -->
     <section class="w-full bg-[#D0DDEB] h-screen">
         <div class="flex flex-col container h-full">
-            <!-- Navbar -->
-            <nav id="navbar">
-                <ul>
-                    <center>
-                        <li><img src="img/a5logo.png" width="50" height="50"></li>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#mySkills">Skills</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#collaborate">Contact</a></li>
-                    </center>
-                </ul>
-            </nav>                      
             <!-- End Navbar -->
-    
+
             <!-- Introduction -->
-            <section id="home">
-                <div class="flex grow flex-row">
+            <section id="home" class="pl-10 mt-10">
+                <div class="flex grow flex-col md:flex-row">
+
                     <!-- Right Side (Formerly Left Side) -->
-                    <div class="hidden lg:grid w-1/2">
-                        <img src="img/nieto-rmv.png" class="w-5/6 place-self-end mt-8" />
+                    <div class="md:order-1">
+                        <img src="img/nieto-rmv.png" class="max-w-40 md:max-w-full mx-auto" alt="Nieto's Image">
                     </div>
-        
                     <!-- Left Side (Formerly Right Side) -->
-                    <div class="flex flex-col justify-center lg:w-1/2 w-full pl-8 pr-8">
-                        <p class="text-[40px] lg:text-[60px] leading-tight font-medium mb-4">
+                    <div class="md:w-1/2 w-full pl-8 pr-8 md:order-2 md:text-sm">
+                        <p class="text-[40px] md:text-[40px] leading-tight font-medium mb-4">
                             <b>Take the risk or lose the chance - nieto</b>
                         </p>
                         <p class="text-[24px] mb-8">
-                            Welcome! I'm Nieto Salim Maula, a Bandung Polytechnic Student as well as a passionate developer who is always looking for new challenges in the world of technology. I believe that every line of code has the potential to create something amazing.
+                            Welcome! I'm Nieto Salim Maula, a Bandung Polytechnic Student as well as a passionate
+                            developer who is always looking for new challenges in the world of technology. I believe
+                            that every line of code has the potential to create something amazing.
                         </p>
-        
-                        <div class="inline-flex mt-4 space-x-[24px]">
-                            <button class="px-[16px] py-[8px] lg:text-[24px] lg:py-[12px] lg:px-[40px] bg-black rounded-full text-white hover:shadow-lg"><a href="https://drive.google.com/drive/folders/1TDR8lR7TidVUwy-FdUUFxjuRoNlSUWvR?usp=drive_link">Let's Work</a></button>
+
+                        <div class="flex items-center justify-between md:flex-wrap md:justify-left">
+                            <div class="flex items-center space-x-4 md:inline-flex md:flex-col md:space-y-4">
+                                <button
+                                    class="px-4 py-2 md:px-8 md:py-4 bg-black rounded-full text-white hover:shadow-lg">
+                                    <a
+                                        href="https://drive.google.com/drive/folders/1TDR8lR7TidVUwy-FdUUFxjuRoNlSUWvR?usp=drive_link">Let's
+                                        Work</a>
+                                </button>
+                                <div class="flex space-x-4 md:inline-flex">
+                                    <img src="img/icons8-facebook.svg" class="w-6 md:w-8" />
+                                    <img src="img/icons8-twitter.svg" class="w-6 md:w-8" />
+                                    <img src="img/icons8-instagram.svg" class="w-6 md:w-8" />
+                                </div>
+                            </div>
                         </div>
-                        <div class="inline-flex space-x-[24px] mt-8">
-                            <img src="img/icons8-facebook.svg" class="w-[24px]"/>
-                            <img src="img/icons8-twitter.svg" class="w-[24px]"/>
-                            <img src="img/icons8-instagram.svg" class="w-[24px]"/>
-                        </div>
+
+
                     </div>
                 </div>
+
             </section>
             <!-- End Introduction -->
         </div>
@@ -76,58 +103,63 @@
     <section id="mySkills" class="MySkills">
         <div class="container">
             <h2>Things I'm Good At:</h2>
-                <div class="skills">
-                    <span class="name">C/C++</span>
-                        <div class="percent">
-                            <div class="progress" style="width: 50%;"></div>
-                        </div>
-                    <span class="value">50%</span>
+            <div class="skills">
+                <span class="name">C/C++</span>
+                <div class="percent">
+                    <div class="progress" style="width: 50%;"></div>
                 </div>
-                <div class="skills">
-                    <span class="name">Java</span>
-                        <div class="percent">
-                            <div class="progress" style="width: 70%;"></div>
-                        </div>
-                    <span class="value">70%</span>
+                <span class="value">50%</span>
+            </div>
+            <div class="skills">
+                <span class="name">Java</span>
+                <div class="percent">
+                    <div class="progress" style="width: 70%;"></div>
                 </div>
-                <div class="skills">
-                    <span class="name">PHP</span>
-                        <div class="percent">
-                            <div class="progress" style="width: 80%;"></div>
-                        </div>
-                    <span class="value">80%</span>
+                <span class="value">70%</span>
+            </div>
+            <div class="skills">
+                <span class="name">PHP</span>
+                <div class="percent">
+                    <div class="progress" style="width: 80%;"></div>
                 </div>
-                <div class="skills">
-                    <span class="name">Python</span>
-                        <div class="percent">
-                            <div class="progress" style="width: 80%;"></div>
-                        </div>
-                    <span class="value">80%</span>
+                <span class="value">80%</span>
+            </div>
+            <div class="skills">
+                <span class="name">Python</span>
+                <div class="percent">
+                    <div class="progress" style="width: 80%;"></div>
                 </div>
-                <div class="skills">
-                    <span class="name">Leadership and Problem Solving</span>
-                        <div class="percent">
-                            <div class="progress" style="width: 80%;"></div>
-                        </div>
-                    <span class="value">80%</span>
+                <span class="value">80%</span>
+            </div>
+            <div class="skills">
+                <span class="name">Leadership and Problem Solving</span>
+                <div class="percent">
+                    <div class="progress" style="width: 80%;"></div>
                 </div>
-                <div class="skills">
-                    <span class="name">Creative and critical thinking</span>
-                        <div class="percent">
-                            <div class="progress" style="width: 80%;"></div>
-                        </div>
-                    <span class="value">80%</span>
+                <span class="value">80%</span>
+            </div>
+            <div class="skills">
+                <span class="name">Creative and critical thinking</span>
+                <div class="percent">
+                    <div class="progress" style="width: 80%;"></div>
                 </div>
+                <span class="value">80%</span>
+            </div>
     </section>
 
     <!-- Portofolio -->
-    <section id="gallery" class="w-full container mt-[100px]">
+    <section id="gallery" class="w-full container mt-[100px] pl-20 mx-auto items-center">
         <p class="text-[50px] font-bold"> Etc</p>
         <p class="text-[24px] mb-8">
-            I am currently in group A5 in the Project 1 course: Desktop Software Development. I have a hobby of playing with friends and playing social media, therefore I really like to socialize. I currently live in West Java, Cimahi.
+            I am currently in group A5 in the Project 1 course: Desktop Software Development. I have a hobby of playing
+            with friends and playing social media, therefore I really like to socialize. I currently live in West Java,
+            Cimahi.
         </p>
 
-        <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7922.16680124827!2d107.53746819057923!3d-6.880611870869131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e44f133c909d%3A0xe148c268acdb6478!2sKarangmekar%2C%20Kec.%20Cimahi%20Tengah%2C%20Kota%20Cimahi%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1709049627277!5m2!1sid!2sid" width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>
+        <center><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7922.16680124827!2d107.53746819057923!3d-6.880611870869131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e44f133c909d%3A0xe148c268acdb6478!2sKarangmekar%2C%20Kec.%20Cimahi%20Tengah%2C%20Kota%20Cimahi%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1709049627277!5m2!1sid!2sid"
+                width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe></center>
 
         <div class="inline-flex space-x-[24px] mt-[80px] text-[20px] text-neutral-500 truncate">
             <p class="text-[50px] font-bold">My Gallery</p>
@@ -165,13 +197,17 @@
     <!-- End Portofolio -->
 
     <div class="border border-neutral-500 w-1/3 container my-[200px]"></div>
-    
+
     <!-- Shop -->
-    <section id="collaborate" class="flex flex-col lg:flex-row w-full container">
+    <section id="collaborate" class="flex flex-col lg:flex-row w-full container pl-20">
         <center>
             <div class="flex  flex-col w-full lg:w-1/2">
                 <p class="text-[50px] font-bold">The hope's</p>
-                <p class="text-[24px] w-10/12 mt-[12px]">During the teaching of Project 1: Desktop Application Development, I was able to get new things in applying several technologies that are currently widely used and able to provide benefits today. In addition to getting these new things, I was able to collaborate with great people in my group, who have their own advantages and uniqueness. I hope that I can carry out learning not only in one course but other courses optimally and maximally.</p>
+                <p class="text-[24px] w-10/12 mt-[12px]">During the teaching of Project 1: Desktop Application
+                    Development, I was able to get new things in applying several technologies that are currently widely
+                    used and able to provide benefits today. In addition to getting these new things, I was able to
+                    collaborate with great people in my group, who have their own advantages and uniqueness. I hope that
+                    I can carry out learning not only in one course but other courses optimally and maximally.</p>
             </div>
         </center>
     </section>
@@ -184,9 +220,9 @@
         <p class="text-[50px]">Want to collaborate?</p>
         <p class="text-[24px]">You can shoot me an email or we could have a quick chat.</p>
         <div class="mt-[50px]">
-            <button
-            class="text-[24px] py-[12px] px-[40px] bg-black rounded-full text-white hover:shadow-lg">Get in touch</button>
-       
+            <button class="text-[24px] py-[12px] px-[40px] bg-black rounded-full text-white hover:shadow-lg">Get in
+                touch</button>
+
         </div>
     </section>
     <!-- End Collaborate -->
@@ -197,9 +233,9 @@
             <div class="flex flex-col">
                 <div class="w-[100px] h-[100px] bg-zinc-200 border-2 border-zinc-300 rounded-lg"></div>
                 <div class="inline-flex space-x-[24px] mt-[24px] opacity-50">
-                    <img src="img/icons8-facebook.svg" class="w-[24px]"/>
-                    <img src="img/icons8-twitter.svg" class="w-[24px]"/>
-                    <img src="img/icons8-instagram.svg" class="w-[24px]"/>
+                    <img src="img/icons8-facebook.svg" class="w-[24px]" />
+                    <img src="img/icons8-twitter.svg" class="w-[24px]" />
+                    <img src="img/icons8-instagram.svg" class="w-[24px]" />
                 </div>
             </div>
             <div class="flex flex-col space-y-4 text-zinc-500">
