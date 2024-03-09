@@ -1,182 +1,144 @@
-* {
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-color: #39e4ba;
+}
+
+a {
+  color: #000;
+}
+
+/* header */
+
+.header {
+  background-color: #22d6e0;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
   margin: 0;
   padding: 0;
-}
-body {
-  font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
-}
-/*navbar*/
-nav {
-  display: flex;
-  background-color: coral;
-  justify-content: space-around;
-  /* padding: 20px 0; atas bawah 20  kiri kanan 0 */
-  /* atur padding dengan flex */
-  height: 45px;
-  align-items: center;
-  color: whitesmoke;
-}
-nav ul {
-  display: flex;
   list-style: none;
-  width: 40%;
-  justify-content: space-between;
-  transition: all 0.4s;
-}
-nav .logo {
-  font-family: "Srisakdi", cursive;
-  letter-spacing: 3px; /*space antar char*/
+  overflow: hidden;
+  background-color: #22d6e0;
 }
 
-nav ul li a {
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #39e4ba;
   text-decoration: none;
-  color: white;
-  font-size: 0.9rem;
 }
 
-nav ul li a:hover {
-  color: teal;
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #39e4ba;
 }
-  /* hamburger menu */
-  .menu-toggle{
-    display: none; 
-    flex-direction: column;
-    height: 17px;
-    justify-content: space-between;
-    position: relative;
- }
- .menu-toggle input{
-     position: absolute;
-     top:-5px;
-     left:-3px;
-     width:21px;
-     height: 21px;
-     opacity: 0;
-     cursor: pointer;
-     z-index: 2;
- }
- .menu-toggle span{
-     display: block;
-     width: 21px;
-     height: 2px;
-     background-color: whitesmoke;
-     border-radius: 3px;
-     transition: all 0.7s;
- }
 
-   /*x on hamburger menu*/
-   .menu-toggle span:nth-child(2){
-    transform-origin: left center;
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+
+  /* Tambahkan properti berikut untuk membuat logo fleksibel */
+  max-width: 1%;
+  height: 1%;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
   }
-  
-  .menu-toggle span:nth-child(4){
-    transform-origin: left center;
+  .header li a {
+    padding: 20px 30px;
   }
-  
-  .menu-toggle input:checked ~ span:nth-child(2){
-    transform: rotate(45deg) ;
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
   }
-  
-  .menu-toggle input:checked ~ span:nth-child(4){
-    transform: rotate(-45deg) ;
+  .header .menu-icon {
+    display: none;
   }
-  /* invis span ke 2 / child ke 3 */
-  .menu-toggle input:checked ~ span:nth-child(3){
-    width: 0%;
-    opacity: 0;
-    transition: .1s
-  }
-
-  .image {
-   
-    width: 100%;
-    height: auto;  
-    max-width: 140px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
-
-.container {
-    display: flex;
-    flex-direction: column;
-
-    border: 2px solid blue;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 0 auto;
-
-}
-main {
-    display: flex;
-    flex-direction: row;
-}
-
-.box {
-    margin: 5px;
-    padding: 10px;
-    border-radius: 5px;
-}
-/* supaya ada jarak antar box  */
-.flexone{
-flex-grow: 1;
-}
-.flextwo{
-    flex-grow: 2;
-    }
-footer {
-    text-align: center;
-}
-h2 {
-  
-    text-align: center;
-    color: brown;
-    text-justify: inter-word;
-    word-wrap: break-word;
-
-}
-h5 {
-  text-align: center;
-  color: red;
-  word-wrap: break-word;
- 
-}
-p {
-    text-align: justify;
-    text-justify: inter-word;
-}
-@media screen and (max-width: 768px) {
-    nav ul{
-      width: 50%;
-    }
-  }
-
-  @media screen and (max-width: 576px) {
-   .menu-toggle{
-       display: flex;
-   }
-   main{
-       flex-direction: column-reverse;
-   }
-    nav ul{
-      position: absolute;
-      right:0;
-      top: 0;
-      width: 50%;
-      flex-direction: column;
-      height: 100vh;
-      justify-content:space-evenly;
-      align-items: center;
-      background-color: coral;
-      /* transform: translateX(100%);  */
-      transition: all 0.72s;
-      opacity: 0;
-      z-index: 2;
-    }
-    nav ul.menushow{
-        opacity: 0.5;
-        /* transform: translateX(0); */
-    }
-  }
-
