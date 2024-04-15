@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scrapping | Nieto Salim Maula</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/navbar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    </head>
+<body class="bg-light-subtle">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="fas fa-leaf fa-lg"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- Menambahkan kelas "ms-auto" di sini -->                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#biodata">Biodata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../etc/theme_old/">Old Theme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn bg-info text-white btn-outline-dark rounded-pill btn-link nav-link" href="scrapping.html">Scrapper!</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>    
+
+    <div class="container-fluid">
+        <div class="col-2 lockNavbar">
+            <div class="container-fluid">
+                <div class="col-10 offset-2">
+                    <div class="row">
+                        <h5 class="fs-5">Project Contents</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="col-9 offset-2">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyek.html">Introducing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="scrapping.html">Scrapping</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soon</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-9 offset-2 mt-4 pt-5">
+            <div class="container-fluid mt-3 mb-5">
+                <div class="row">
+                    <h1 class="display-4">Scrapping</h1>
+                </div>
+                <div class="row mt-3">
+                    <p>Pada era digital saat ini, informasi menjadi semakin mudah diakses melalui internet. Salah satu sumber informasi yang banyak digunakan adalah situs web berita. Namun, terkadang kita memerlukan akses cepat dan terstruktur terhadap data yang terdapat dalam situs web tersebut. Web scraping adalah teknik yang digunakan untuk mengekstrak data dari halaman web secara otomatis, yang dapat membantu dalam memperoleh informasi secara efisien dan teratur.</p>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header">Web Scrapping : BeautifulSoup & Task Scheduler</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Spesifikasi Program</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li><i class="fab fa-python"></i> Python: Bahasa pemrograman utama dengan dukungan library untuk web scraping dan pengolahan data.</li>
+                                    <li><i class="fab fa-python"></i> BeautifulSoup: Library Python untuk mengekstrak data dari HTML dan XML.</li>
+                                    <li><i class="fas fa-file-code"></i> JSON: Format penyimpanan data hasil web scraping.</li>
+                                    <li><i class="fas fa-code"></i> Visual Studio Code: IDE untuk mengembangkan program Python.</li>
+                                    <li><i class="fab fa-git"></i> Git: Sistem kontrol versi untuk mengelola perubahan dalam kode program.</li>
+                                    <li><i class="fab fa-github"></i> GitHub: Platform hosting untuk menyimpan dan berbagi kode program.</li>
+                                    <li><i class="fab fa-bootstrap"></i> Bootstrap: Framework untuk merancang tampilan web yang responsif.</li>
+                                    <li><i class="fab fa-xampp"></i> XAMPP: Paket perangkat lunak untuk membuat lingkungan server web lokal.</li>
+                                    <li><i class="fas fa-tasks"></i> Task Scheduler: Fitur pada sistem operasi Windows untuk menjadwalkan dan mengotomatisasi eksekusi tugas-tugas tertentu.</li>
+                                </ul>
+                            </p>
+                        </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-5">
+                        <!-- Search bar -->
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search Judul Berita">
+                    </div>
+                    <div class="col-1">
+                        <button type="button" class="btn btn-primary" id="searchButton" style="width: 100%;">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="col-4">
+                        <!-- Filter dropdown -->
+                        <select class="form-select" id="filterSelect">
+                            <option value="">Pilih Kategori</option>
+                        </select>
+                    </div>
+                    <div class="col-1">
+                        <button type="button" class="btn btn-secondary" id="sortLatest" style="width: 100%;">
+                            <i class="fas fa-sort-amount-down"></i>
+                        </button>
+                    </div>
+                    <div class="col-1">
+                        <button type="button" class="btn btn-secondary" id="sortOldest" style="width: 100%;">
+                            <i class="fas fa-sort-amount-up"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <table id="newsTable" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Judul Berita</th>
+                                <th scope="col">Waktu Publish</th>
+                                <th scope="col">Kategori</th>
+                                <th scope="col">Tautan</th>
+                                <th scope="col">Waktu Scrapping</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <p>Tujuan dari praktikum untuk memenuhi penugasan dari mata kuliah Proyek 1 : Pengembangan Perangkat Lunak Program Studi D4 Teknik Informatika Politeknik Negeri Bandung, praktikum ini dilakukan untuk mempelajari dan mengimplementasikan teknik web scraping menggunakan BeautifulSoup pada situs berita Republika.co.id. Praktikum ini akan membahas langkah-langkah untuk melakukan scraping data dari situs tersebut dan menyimpannya dalam format yang mudah diakses dan diolah.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Fungsi untuk mengisi tabel dengan data dari file JSON
+            function fillTable(data) {
+                var table = $("#newsTable tbody");
+                table.empty(); // Mengosongkan isi tabel sebelum mengisi dengan data baru
+                $.each(data, function(index, val){
+                    var row = $("<tr>");
+                    row.append($("<td>").text(index + 1)); // Nomor urutan data
+                    row.append($("<td>").text(val["Judul"]));
+                    row.append($("<td>").html(val["Waktu Publish"] + "<br>" + formatWaktu(val["Waktu Publish"])));
+                    row.append($("<td>").text(val["Kategori"]));
+                    row.append($("<td>").html("<a href='" + val["Tautan"] + "'><i class='fas fa-paperclip'></i></a>"));
+                    row.append($("<td>").text(val["Waktu Scrapping"]));
+                    table.append(row);
+                });
+            }
+
+            // Mengambil data dari file JSON saat halaman dimuat
+            $.getJSON("../data/data.json", function(data){
+                fillTable(data);
+                populateCategoryDropdown(data);
+                // Inisialisasi DataTable tanpa fitur pencarian
+                $('#newsTable').DataTable({
+                    searching: false
+                });
+            });
+
+            // Fungsi untuk melakukan pencarian berdasarkan judul
+            $("#searchButton").on("click", function() {
+                var searchTerm = $("#searchInput").val().toLowerCase();
+                var selectedCategory = $("#filterSelect").val();
+                $.getJSON("../data/data.json", function(data){
+                    var filteredData = data.filter(function(item) {
+                        var matchesSearch = item["Judul"].toLowerCase().includes(searchTerm);
+                        var matchesCategory = selectedCategory === "" || item["Kategori"] === selectedCategory;
+                        return matchesSearch && matchesCategory;
+                    });
+                    fillTable(filteredData);
+                    // Reinisialisasi DataTable setelah pengisian ulang
+                    $('#newsTable').DataTable();
+                });
+            });
+
+            // Fungsi untuk menampilkan hasil filter ketika kategori dipilih
+            $("#filterSelect").on("change", function() {
+                $("#searchButton").click(); // Memanggil fungsi pencarian setiap kali kategori diubah
+            });
+
+            // Fungsi untuk mengubah format waktu
+            function formatWaktu(waktu) {
+                var now = new Date();
+                var waktuPublish = new Date(waktu);
+                var diffMs = now - waktuPublish;
+                var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
+
+                if (diffMins < 60) {
+                    return diffMins + " menit yang lalu";
+                } else {
+                    return waktu;
+                }
+            }
+
+            // Fungsi untuk mengisi dropdown kategori
+            function populateCategoryDropdown(data) {
+                var categories = [];
+                $.each(data, function(index, val) {
+                    if (!categories.includes(val["Kategori"])) {
+                        categories.push(val["Kategori"]);
+                    }
+                });
+
+                var dropdown = $("#filterSelect");
+                $.each(categories, function(index, category) {
+                    dropdown.append($("<option>").text(category));
+                });
+            }
+
+            // Fungsi untuk mengurutkan data berdasarkan waktu terbit terbaru
+            $("#sortLatest").on("click", function() {
+                $.getJSON("../data/data.json", function(data){
+                    data.sort(function(a, b) {
+                        return new Date(b["Waktu Publish"]) - new Date(a["Waktu Publish"]);
+                    });
+                    fillTable(data);
+                    // Reinisialisasi DataTable setelah pengisian ulang
+                    $('#newsTable').DataTable();
+                });
+            });
+
+            // Fungsi untuk mengurutkan data berdasarkan waktu terbit tertua
+            $("#sortOldest").on("click", function() {
+                $.getJSON("../data/data.json", function(data){
+                    data.sort(function(a, b) {
+                        return new Date(a["Waktu Publish"]) - new Date(b["Waktu Publish"]);
+                    });
+                    fillTable(data);
+                    // Reinisialisasi DataTable setelah pengisian ulang
+                    $('#newsTable').DataTable();
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
