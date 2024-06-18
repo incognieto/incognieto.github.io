@@ -15,7 +15,7 @@
     </head>
 <body class="bg-light-subtle">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-dark border-bottom border-body" data-bs-theme="dark">
-        <div class="container">
+        <div class="container" style="max-width: 90%;">
             <a class="navbar-brand" href="../index.html"><i class="fas fa-leaf fa-lg"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- Menambahkan kelas "ms-auto" di sini -->                    
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html#about">About</a>
+                        <a class="nav-link" href=".../index.html#about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html#portfolio">Portfolio</a>
@@ -182,110 +182,7 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // Fungsi untuk mengisi tabel dengan data dari file JSON
-            function fillTable(data) {
-                var table = $("#newsTable tbody");
-                table.empty(); // Mengosongkan isi tabel sebelum mengisi dengan data baru
-                $.each(data, function(index, val){
-                    var row = $("<tr>");
-                    row.append($("<td>").text(index + 1)); // Nomor urutan data
-                    row.append($("<td>").text(val["Judul"]));
-                    row.append($("<td>").html(val["Waktu Publish"] + "<br>" + formatWaktu(val["Waktu Publish"])));
-                    row.append($("<td>").text(val["Kategori"]));
-                    row.append($("<td>").html("<a href='" + val["Tautan"] + "'><i class='fas fa-paperclip'></i></a>"));
-                    row.append($("<td>").text(val["Waktu Scrapping"]));
-                    table.append(row);
-                });
-            }
-
-            // Mengambil data dari file JSON saat halaman dimuat
-            $.getJSON("../data/data.json", function(data){
-                fillTable(data);
-                populateCategoryDropdown(data);
-                // Inisialisasi DataTable tanpa fitur pencarian
-                $('#newsTable').DataTable({
-                    searching: false
-                });
-            });
-
-            // Fungsi untuk melakukan pencarian berdasarkan judul
-            $("#searchButton").on("click", function() {
-                var searchTerm = $("#searchInput").val().toLowerCase();
-                var selectedCategory = $("#filterSelect").val();
-                $.getJSON("../data/data.json", function(data){
-                    var filteredData = data.filter(function(item) {
-                        var matchesSearch = item["Judul"].toLowerCase().includes(searchTerm);
-                        var matchesCategory = selectedCategory === "" || item["Kategori"] === selectedCategory;
-                        return matchesSearch && matchesCategory;
-                    });
-                    fillTable(filteredData);
-                    // Reinisialisasi DataTable setelah pengisian ulang
-                    $('#newsTable').DataTable();
-                });
-            });
-
-            // Fungsi untuk menampilkan hasil filter ketika kategori dipilih
-            $("#filterSelect").on("change", function() {
-                $("#searchButton").click(); // Memanggil fungsi pencarian setiap kali kategori diubah
-            });
-
-            // Fungsi untuk mengubah format waktu
-            function formatWaktu(waktu) {
-                var now = new Date();
-                var waktuPublish = new Date(waktu);
-                var diffMs = now - waktuPublish;
-                var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000);
-
-                if (diffMins < 60) {
-                    return diffMins + " menit yang lalu";
-                } else {
-                    return waktu;
-                }
-            }
-
-            // Fungsi untuk mengisi dropdown kategori
-            function populateCategoryDropdown(data) {
-                var categories = [];
-                $.each(data, function(index, val) {
-                    if (!categories.includes(val["Kategori"])) {
-                        categories.push(val["Kategori"]);
-                    }
-                });
-
-                var dropdown = $("#filterSelect");
-                $.each(categories, function(index, category) {
-                    dropdown.append($("<option>").text(category));
-                });
-            }
-
-            // Fungsi untuk mengurutkan data berdasarkan waktu terbit terbaru
-            $("#sortLatest").on("click", function() {
-                $.getJSON("../data/data.json", function(data){
-                    data.sort(function(a, b) {
-                        return new Date(b["Waktu Publish"]) - new Date(a["Waktu Publish"]);
-                    });
-                    fillTable(data);
-                    // Reinisialisasi DataTable setelah pengisian ulang
-                    $('#newsTable').DataTable();
-                });
-            });
-
-            // Fungsi untuk mengurutkan data berdasarkan waktu terbit tertua
-            $("#sortOldest").on("click", function() {
-                $.getJSON("../data/data.json", function(data){
-                    data.sort(function(a, b) {
-                        return new Date(a["Waktu Publish"]) - new Date(b["Waktu Publish"]);
-                    });
-                    fillTable(data);
-                    // Reinisialisasi DataTable setelah pengisian ulang
-                    $('#newsTable').DataTable();
-                });
-            });
-
-        });
-    </script>
+    <script src="../js/scrapper.js"></script>
 
 </body>
 </html>

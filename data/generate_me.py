@@ -1,8 +1,19 @@
 from bs4 import BeautifulSoup
 import requests
-from datetime import datetime as dt
+from datetime import datetime as dt, timedelta  
 import json
 import os
+
+def get_publish_time(info):
+    saat_ini = dt.now()
+    if 'jam' in info:
+        return (saat_ini - timedelta(hours=int(info.split('-')[1].strip().split()[0]))).strftime("%d %b %Y %H:%M:%S")
+    elif 'menit' in info:
+        return (saat_ini - timedelta(minutes=int(info.split('-')[1].strip().split()[0]))).strftime("%d %b %Y %H:%M:%S")
+    elif 'detik' in info:
+        return (saat_ini - timedelta(seconds=int(info.split('-')[1].strip().split()[0]))).strftime("%d %b %Y %H:%M:%S")
+    else:
+        return info.split('-')[1].strip()
 
 def find_news():
     html_text = requests.get('https://www.republika.co.id/').text
@@ -23,7 +34,7 @@ def find_news():
         title = new.h3.text.strip()
         categories = new.find('span', class_='kanal-info').text
         waktu = new.find('div', class_='date').text.split('-')
-        waktu_publish = waktu[1].strip()
+        waktu_publish = get_publish_time(new.find('div', class_='date').text)
         waktu_scrap = dt.now().strftime("%d %b %Y %H:%M:%S")
         tautan = new.a['href']
         info = {
